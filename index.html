@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>what's your age again? — support</title>
+<meta name="description" content="Support, FAQ, and privacy information for what's your age again?, an iPhone app that shows your age in years, days, minutes, and seconds.">
+<meta name="theme-color" content="#DFE7FB">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #191820;
+    --lime: #E9F7C3;
+    --pink: #F9DCD9;
+    --peach: #FDE8CD;
+    --peri: #DFE7FB;
+    --mint: #E6F2F0;
+    --lilac: #F4DDF1;
+    --measure: 46rem;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: #FBFAF7;
+    color: var(--ink);
+    font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+    text-transform: lowercase;
+    margin: 0;
+  }
+
+  h1 { font-size: clamp(2.6rem, 11vw, 5rem); }
+  h2 { font-size: clamp(1.9rem, 6.5vw, 2.9rem); margin-bottom: 1.5rem; }
+  h3 { font-size: 1.15rem; letter-spacing: -0.02em; line-height: 1.3; margin-bottom: 0.35rem; }
+
+  p { margin: 0 0 1.05rem; }
+  p:last-child { margin-bottom: 0; }
+
+  a {
+    color: var(--ink);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+  a:hover { text-decoration-color: rgba(25, 24, 32, 0.35); }
+
+  /* ---------- hero ---------- */
+
+  header {
+    background: var(--peri);
+    padding: clamp(4rem, 14vw, 8rem) 0 clamp(3.5rem, 11vw, 6rem);
+  }
+
+  .eyebrow {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(25, 24, 32, 0.55);
+    margin-bottom: 1.6rem;
+  }
+
+  .tagline {
+    font-size: clamp(1.15rem, 4.4vw, 1.5rem);
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+    margin: 1.6rem 0 0;
+    max-width: 30ch;
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 2.25rem;
+    list-style: none;
+    padding: 0;
+  }
+
+  .chips li {
+    background: rgba(255, 255, 255, 0.62);
+    border-radius: 999px;
+    padding: 0.4rem 0.95rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+  }
+
+  /* ---------- sections ---------- */
+
+  section {
+    padding: clamp(3.25rem, 10vw, 5.5rem) 0;
+  }
+
+  .band-lime  { background: var(--lime); }
+  .band-pink  { background: var(--pink); }
+  .band-peach { background: var(--peach); }
+  .band-mint  { background: var(--mint); }
+  .band-lilac { background: var(--lilac); }
+
+  .steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.75rem;
+  }
+
+  .steps li {
+    display: grid;
+    grid-template-columns: 2.6rem 1fr;
+    gap: 1.1rem;
+    align-items: start;
+  }
+
+  .num {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    padding-top: 0.15rem;
+    color: rgba(25, 24, 32, 0.35);
+  }
+
+  .steps h3 { margin-bottom: 0.2rem; }
+  .steps p { margin: 0; color: rgba(25, 24, 32, 0.78); }
+
+  /* ---------- faq ---------- */
+
+  .faq {
+    display: grid;
+    gap: 0;
+  }
+
+  .faq > div {
+    padding: 1.5rem 0;
+    border-top: 2px solid rgba(25, 24, 32, 0.12);
+  }
+  .faq > div:last-child {
+    border-bottom: 2px solid rgba(25, 24, 32, 0.12);
+  }
+
+  .faq p { color: rgba(25, 24, 32, 0.78); margin: 0; }
+
+  /* ---------- privacy ---------- */
+
+  .lede {
+    font-size: clamp(1.2rem, 4.2vw, 1.5rem);
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+    font-weight: 500;
+    margin-bottom: 1.75rem;
+  }
+
+  .facts {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .facts li {
+    display: grid;
+    grid-template-columns: 1.35rem 1fr;
+    gap: 0.8rem;
+    color: rgba(25, 24, 32, 0.8);
+  }
+
+  .facts span[aria-hidden] {
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  /* ---------- contact ---------- */
+
+  .mail {
+    display: inline-block;
+    font-size: clamp(1.05rem, 4.2vw, 1.45rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 999px;
+    padding: 0.75rem 1.5rem;
+    margin-top: 0.35rem;
+    text-decoration: none;
+    border: 2px solid rgba(25, 24, 32, 0.12);
+    word-break: break-word;
+  }
+  .mail:hover { border-color: rgba(25, 24, 32, 0.4); }
+
+  .fine { color: rgba(25, 24, 32, 0.7); font-size: 0.95rem; margin-top: 1.5rem; }
+
+  /* ---------- footer ---------- */
+
+  footer {
+    padding: 3rem 0 4rem;
+    font-size: 0.9rem;
+    color: rgba(25, 24, 32, 0.6);
+  }
+
+  footer p { margin: 0 0 0.35rem; }
+
+  @media (max-width: 420px) {
+    body { font-size: 16px; }
+    .steps li { grid-template-columns: 2rem 1fr; gap: 0.85rem; }
+    .num { font-size: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">support</p>
+    <h1>what's your age again?</h1>
+    <p class="tagline">Enter your birthday once, then watch your age count itself out — in years, days, minutes, and ticking seconds.</p>
+    <ul class="chips">
+      <li>iPhone · iOS 17+</li>
+      <li>no accounts</li>
+      <li>no tracking</li>
+      <li>works offline</li>
+    </ul>
+  </div>
+</header>
+
+<section class="band-lime">
+  <div class="wrap">
+    <h2>how it works</h2>
+    <ol class="steps">
+      <li>
+        <span class="num" aria-hidden="true">1</span>
+        <div>
+          <h3>Tell it your birthday</h3>
+          <p>On first launch, pick your month, day, and year. That's the only thing the app ever asks you for.</p>
+        </div>
+      </li>
+      <li>
+        <span class="num" aria-hidden="true">2</span>
+        <div>
+          <h3>Tap or swipe through</h3>
+          <p>Six full-screen views walk your age up through bigger and bigger units: whole years, exact fractional years, days, minutes, seconds, and a closing note. Tap the right side of the screen to go forward, the left side to go back — or just swipe.</p>
+        </div>
+      </li>
+      <li>
+        <span class="num" aria-hidden="true">3</span>
+        <div>
+          <h3>Start over or make a change</h3>
+          <p>The round reset button jumps you back to the first screen. The round pencil button reopens the birthday editor whenever you need it.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="band-peach">
+  <div class="wrap">
+    <h2>frequently asked</h2>
+    <div class="faq">
+      <div>
+        <h3>How do I change my birthday?</h3>
+        <p>Tap the round pencil button. The birthday editor reopens with your current date filled in, and you can change the month, day, or year. Your new birthday saves as soon as you confirm it.</p>
+      </div>
+      <div>
+        <h3>Why does the seconds number keep moving?</h3>
+        <p>Because it's the real number, right now. The minutes and seconds screens update live while you're looking at them, so the count you see is always current rather than a snapshot from when the app opened.</p>
+      </div>
+      <div>
+        <h3>Where is my birthday stored?</h3>
+        <p>Only on your iPhone, in the app's own local storage. It is never uploaded, synced, backed up to a server, or shared with anyone — including me.</p>
+      </div>
+      <div>
+        <h3>How do I delete my data?</h3>
+        <p>Delete the app. Touch and hold the app icon on your Home Screen, choose <em>Remove App</em>, then <em>Delete App</em>. Your saved birthday is removed along with it. There's nothing stored anywhere else to clean up.</p>
+      </div>
+      <div>
+        <h3>Does it work offline?</h3>
+        <p>Yes, entirely. The app makes no network requests at all, so it works the same in airplane mode, on a plane, or with no signal.</p>
+      </div>
+      <div>
+        <h3>Why does it only go up to a certain birth year?</h3>
+        <p>The year picker covers 1925 through 2016. That range keeps the picker quick to scroll while comfortably covering everyone the app is built for. If your birth year falls outside it, send me a note and I'll widen the range.</p>
+      </div>
+      <div>
+        <h3>My fractional age looks different from another calculator's.</h3>
+        <p>Fractional-age tools differ in how they handle leap years and the length of a "year." This app counts the exact elapsed time since your birthday and divides it into years, which is why you get six decimal places that keep moving.</p>
+      </div>
+      <div>
+        <h3>Can I use it on iPad or Mac?</h3>
+        <p>It's built for iPhone in portrait orientation. It will run on an iPad in iPhone compatibility mode, but the layout is designed for a phone screen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-mint">
+  <div class="wrap">
+    <h2>privacy</h2>
+    <p class="lede">This app collects no data whatsoever.</p>
+    <ul class="facts">
+      <li><span aria-hidden="true">—</span><span>No analytics, no crash reporting, no advertising identifiers, no third-party SDKs.</span></li>
+      <li><span aria-hidden="true">—</span><span>No account, no sign-in, no email address required.</span></li>
+      <li><span aria-hidden="true">—</span><span>No network requests of any kind. Nothing leaves your device because nothing is ever sent.</span></li>
+      <li><span aria-hidden="true">—</span><span>Your birthday is saved in local app storage on your iPhone and used only to calculate the numbers you see on screen.</span></li>
+      <li><span aria-hidden="true">—</span><span>Deleting the app deletes that birthday. No copy of it exists anywhere else.</span></li>
+      <li><span aria-hidden="true">—</span><span>Nothing is sold, shared, or disclosed to anyone, because there is nothing to sell or share.</span></li>
+    </ul>
+    <p class="fine">If this policy ever changes, it will change here first, along with the last-updated date at the bottom of this page.</p>
+  </div>
+</section>
+
+<section class="band-pink">
+  <div class="wrap">
+    <h2>contact</h2>
+    <p>Questions, bugs, or ideas — email me and I'll get back to you. Telling me your iPhone model and iOS version helps a lot with bug reports.</p>
+    <a class="mail" href="mailto:ashwini.purohit@growtherapy.com?subject=what's%20your%20age%20again%3F%20support">ashwini.purohit@growtherapy.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>what's your age again? — version 1.0 for iPhone</p>
+    <p>Last updated August 29, 2026</p>
+    <p>© 2026 Ashwini Pokorny</p>
+  </div>
+</footer>
+
+</body>
+</html>
